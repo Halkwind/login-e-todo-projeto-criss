@@ -29,15 +29,22 @@ namespace login_e_todo_projeto_cris
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TodoForm));
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxDescricao = new System.Windows.Forms.TextBox();
             this.addBtn = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colTodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDone = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.todoDataSet = new login_e_todo_projeto_cris.TodoDataSet();
+            this.Concluida = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnExcluir = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.todoDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -50,12 +57,12 @@ namespace login_e_todo_projeto_cris
             this.label3.TabIndex = 6;
             this.label3.Text = "Insira aqui:";
             // 
-            // textBox1
+            // textBoxDescricao
             // 
-            this.textBox1.Location = new System.Drawing.Point(25, 62);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(378, 20);
-            this.textBox1.TabIndex = 7;
+            this.textBoxDescricao.Location = new System.Drawing.Point(25, 60);
+            this.textBoxDescricao.Name = "textBoxDescricao";
+            this.textBoxDescricao.Size = new System.Drawing.Size(378, 20);
+            this.textBoxDescricao.TabIndex = 7;
             // 
             // addBtn
             // 
@@ -65,50 +72,91 @@ namespace login_e_todo_projeto_cris
             this.addBtn.TabIndex = 8;
             this.addBtn.Text = "Adicionar Todo";
             this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colTodo,
-            this.colDone,
-            this.colDelete});
-            this.dataGridView1.Location = new System.Drawing.Point(25, 153);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(433, 294);
-            this.dataGridView1.TabIndex = 9;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Empty;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Empty;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.LavenderBlush;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Concluida,
+            this.descricaoDataGridViewTextBoxColumn,
+            this.ColumnExcluir});
+            this.dataGridView.DataSource = this.bindingSource;
+            this.dataGridView.Location = new System.Drawing.Point(12, 102);
+            this.dataGridView.MultiSelect = false;
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView.Size = new System.Drawing.Size(480, 294);
+            this.dataGridView.TabIndex = 9;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
-            // colTodo
+            // bindingSource
             // 
-            this.colTodo.HeaderText = "Todo";
-            this.colTodo.Name = "colTodo";
+            this.bindingSource.DataMember = "Todo";
+            this.bindingSource.DataSource = this.todoDataSet;
             // 
-            // colDone
+            // todoDataSet
             // 
-            this.colDone.HeaderText = "Done";
-            this.colDone.Name = "colDone";
+            this.todoDataSet.DataSetName = "TodoDataSet";
+            this.todoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // colDelete
+            // Concluida
             // 
-            this.colDelete.HeaderText = "Deletar";
-            this.colDelete.Name = "colDelete";
+            this.Concluida.DataPropertyName = "Concluida";
+            this.Concluida.HeaderText = "Done";
+            this.Concluida.Name = "Concluida";
+            this.Concluida.Width = 50;
             // 
-            // Form2
+            // descricaoDataGridViewTextBoxColumn
             // 
+            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.descricaoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descrição";
+            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descricaoDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // ColumnExcluir
+            // 
+            this.ColumnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ColumnExcluir.HeaderText = "Ação";
+            this.ColumnExcluir.Name = "ColumnExcluir";
+            this.ColumnExcluir.Text = "Excluir";
+            this.ColumnExcluir.UseColumnTextForButtonValue = true;
+            // 
+            // TodoForm
+            // 
+            this.AcceptButton = this.addBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(525, 554);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.addBtn);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxDescricao);
             this.Controls.Add(this.label3);
-            this.Name = "Form2";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "TodoForm";
             this.ShowIcon = false;
-            this.Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Todo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TodoForm_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.todoDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,11 +165,13 @@ namespace login_e_todo_projeto_cris
         #endregion
 
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxDescricao;
         private System.Windows.Forms.Button addBtn;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTodo;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colDone;
-        private System.Windows.Forms.DataGridViewButtonColumn colDelete;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private TodoDataSet todoDataSet;
+        private System.Windows.Forms.BindingSource bindingSource;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Concluida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn ColumnExcluir;
     }
 }

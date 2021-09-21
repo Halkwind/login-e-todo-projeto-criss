@@ -34,24 +34,26 @@ namespace login_e_todo_projeto_cris
             this.txbUsuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonCadastrar = new System.Windows.Forms.Button();
+            this.buttonVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txbSenha
             // 
             this.txbSenha.Location = new System.Drawing.Point(41, 119);
+            this.txbSenha.MaxLength = 50;
             this.txbSenha.Name = "txbSenha";
             this.txbSenha.PasswordChar = '*';
             this.txbSenha.Size = new System.Drawing.Size(166, 20);
-            this.txbSenha.TabIndex = 8;
+            this.txbSenha.TabIndex = 3;
             // 
             // txbUsuario
             // 
             this.txbUsuario.Location = new System.Drawing.Point(41, 57);
+            this.txbUsuario.MaxLength = 50;
             this.txbUsuario.Name = "txbUsuario";
             this.txbUsuario.Size = new System.Drawing.Size(166, 20);
-            this.txbUsuario.TabIndex = 7;
+            this.txbUsuario.TabIndex = 1;
             // 
             // label2
             // 
@@ -60,7 +62,7 @@ namespace login_e_todo_projeto_cris
             this.label2.Location = new System.Drawing.Point(90, 97);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 19);
-            this.label2.TabIndex = 6;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Senha:";
             // 
             // label1
@@ -70,42 +72,47 @@ namespace login_e_todo_projeto_cris
             this.label1.Location = new System.Drawing.Point(90, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 19);
-            this.label1.TabIndex = 5;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Usuário:";
             // 
-            // button1
+            // buttonCadastrar
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(41, 156);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(166, 26);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonCadastrar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCadastrar.Location = new System.Drawing.Point(41, 156);
+            this.buttonCadastrar.Name = "buttonCadastrar";
+            this.buttonCadastrar.Size = new System.Drawing.Size(166, 26);
+            this.buttonCadastrar.TabIndex = 4;
+            this.buttonCadastrar.Text = "Cadastrar";
+            this.buttonCadastrar.UseVisualStyleBackColor = true;
+            this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
             // 
-            // button2
+            // buttonVoltar
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(75, 201);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 26);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "voltar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonVoltar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonVoltar.Location = new System.Drawing.Point(75, 201);
+            this.buttonVoltar.Name = "buttonVoltar";
+            this.buttonVoltar.Size = new System.Drawing.Size(79, 26);
+            this.buttonVoltar.TabIndex = 5;
+            this.buttonVoltar.Text = "voltar";
+            this.buttonVoltar.UseVisualStyleBackColor = true;
+            this.buttonVoltar.Click += new System.EventHandler(this.buttonVoltar_Click);
             // 
-            // cadastre
+            // CadastroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(245, 248);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonVoltar);
+            this.Controls.Add(this.buttonCadastrar);
             this.Controls.Add(this.txbSenha);
             this.Controls.Add(this.txbUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "cadastre";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "CadastroForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "cadastre";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -118,7 +125,7 @@ namespace login_e_todo_projeto_cris
         private System.Windows.Forms.TextBox txbUsuario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonCadastrar;
+        private System.Windows.Forms.Button buttonVoltar;
     }
 }
