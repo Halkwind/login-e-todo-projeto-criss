@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace login_e_todo_projeto_cris
 {
-    public partial class Form2 : Form
+    public partial class TodoForm : Form
 
     {
         private string todoText;
         private bool todoChecked;
 
-        public Form2()
+        public TodoForm()
         {
             InitializeComponent();
            this.todoText = string.Empty;

@@ -1,7 +1,7 @@
 ﻿
 namespace login_e_todo_projeto_cris
 {
-    partial class Form2
+    partial class TodoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace login_e_todo_projeto_cris
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TodoForm));
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.addBtn = new System.Windows.Forms.Button();

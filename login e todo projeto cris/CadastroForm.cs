@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace login_e_todo_projeto_cris
 {
-    public partial class cadastre : Form
+    public partial class CadastroForm : Form
     {
-        public cadastre()
+        public CadastroForm()
         {
             InitializeComponent();
         }

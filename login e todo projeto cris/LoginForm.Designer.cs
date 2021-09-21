@@ -1,7 +1,7 @@
 ﻿
 namespace login_e_todo_projeto_cris
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -29,7 +29,7 @@ namespace login_e_todo_projeto_cris
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.btn_entrar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txbUsuario = new System.Windows.Forms.TextBox();
@@ -48,7 +48,6 @@ namespace login_e_todo_projeto_cris
             this.btn_entrar.TabIndex = 0;
             this.btn_entrar.Text = "Entrar";
             this.btn_entrar.UseVisualStyleBackColor = true;
-            this.btn_entrar.Click += new System.EventHandler(this.btn_entrar_Click);
             // 
             // label2
             // 
@@ -66,7 +65,6 @@ namespace login_e_todo_projeto_cris
             this.txbUsuario.Name = "txbUsuario";
             this.txbUsuario.Size = new System.Drawing.Size(166, 20);
             this.txbUsuario.TabIndex = 3;
-            this.txbUsuario.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txbSenha
             // 
@@ -75,7 +73,6 @@ namespace login_e_todo_projeto_cris
             this.txbSenha.PasswordChar = '*';
             this.txbSenha.Size = new System.Drawing.Size(166, 20);
             this.txbSenha.TabIndex = 4;
-            this.txbSenha.TextChanged += new System.EventHandler(this.txbSenha_TextChanged);
             // 
             // label1
             // 
@@ -106,7 +103,6 @@ namespace login_e_todo_projeto_cris
             this.button1.TabIndex = 6;
             this.button1.Text = "Cadastre-se";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 

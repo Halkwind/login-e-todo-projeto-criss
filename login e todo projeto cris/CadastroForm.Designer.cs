@@ -1,7 +1,7 @@
 ﻿
 namespace login_e_todo_projeto_cris
 {
-    partial class cadastre
+    partial class CadastroForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace login_e_todo_projeto_cris
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastre));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroForm));
             this.txbSenha = new System.Windows.Forms.TextBox();
             this.txbUsuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
