@@ -7,18 +7,18 @@ namespace login_e_todo_projeto_cris.Conexao
     {
         public MySqlConnection Conectar()
         {
-            MySqlConnection conn = new MySqlConnection( "User ID=root;Password=selva406;Host=localhost;Port=3306;Database=cris;Protocol=TCP;Compress=false;Pooling=true;Min Pool Size=0;Max Pool Size=100;Connection Lifetime=0;" );
+            MySqlConnection conn = new MySqlConnection("User ID=root;Password=;Host=localhost;Port=3306;Database=cris;Protocol=TCP;Compress=false;Pooling=true;Min Pool Size=0;Max Pool Size=100;Connection Lifetime=0;");
 
             conn.Open();
 
             return conn;
         }
 
-        public DataRow SelecionarRegistro( string sql )
+        public DataRow SelecionarRegistro(string sql)
         {
             DataTable tabela = new DataTable();
 
-            using( MySqlConnection conn = Conectar() )
+            using (MySqlConnection conn = Conectar())
             {
                 MySqlCommand cmd = conn.CreateCommand();
 
@@ -27,21 +27,21 @@ namespace login_e_todo_projeto_cris.Conexao
 
                 MySqlDataReader reader = cmd.ExecuteReader();
 
-                if( reader.HasRows )
-                    tabela.Load( reader );
+                if (reader.HasRows)
+                    tabela.Load(reader);
             }
 
-            if( tabela.Rows.Count > 0 )
-                return tabela.Rows[ 0 ];
+            if (tabela.Rows.Count > 0)
+                return tabela.Rows[0];
 
             return null;
         }
 
-        public int ExecutarScript( string sql )
+        public int ExecutarScript(string sql)
         {
             int linha = 0;
 
-            using( MySqlConnection conn = Conectar() )
+            using (MySqlConnection conn = Conectar())
             {
                 MySqlCommand cmd = conn.CreateCommand();
 
@@ -54,11 +54,11 @@ namespace login_e_todo_projeto_cris.Conexao
             return linha;
         }
 
-        public DataTable Consulta( string sql )
+        public DataTable Consulta(string sql)
         {
             DataTable tabela = new DataTable();
 
-            using( MySqlConnection conn = Conectar() )
+            using (MySqlConnection conn = Conectar())
             {
                 MySqlCommand cmd = conn.CreateCommand();
 
@@ -67,8 +67,8 @@ namespace login_e_todo_projeto_cris.Conexao
 
                 MySqlDataReader reader = cmd.ExecuteReader();
 
-                if( reader.HasRows )
-                    tabela.Load( reader );
+                if (reader.HasRows)
+                    tabela.Load(reader);
             }
 
             return tabela;

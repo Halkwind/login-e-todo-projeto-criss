@@ -12,7 +12,7 @@ namespace login_e_todo_projeto_cris
             InitializeComponent();
         }
 
-        private void btn_entrar_Click( object sender, EventArgs e )
+        private void btn_entrar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -24,7 +24,7 @@ namespace login_e_todo_projeto_cris
 
                 tb_loginControle tb_LoginControle = new tb_loginControle();
 
-                if( tb_LoginControle.Logar( login ) )
+                if (tb_LoginControle.Logar(login))
                 {
                     Hide();
 
@@ -34,21 +34,21 @@ namespace login_e_todo_projeto_cris
                 }
                 else
                 {
-                    throw new ArgumentException( "Usuário ou senha inválida!" );
+                    throw new ArgumentException("Usuário ou senha inválida!");
                 }
             }
-            catch( ArgumentException ex )
+            catch (ArgumentException ex)
             {
-                MessageBox.Show( ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+                MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch( Exception ex )
+            catch (Exception ex)
             {
 
-                MessageBox.Show( ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error );
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void buttonCadastro_Click( object sender, EventArgs e )
+        private void buttonCadastro_Click(object sender, EventArgs e)
         {
             CadastroForm frm = new CadastroForm();
 
