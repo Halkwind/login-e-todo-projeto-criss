@@ -7,7 +7,7 @@ namespace login_e_todo_projeto_cris.Conexao
     {
         public MySqlConnection Conectar()
         {
-            MySqlConnection conn = new MySqlConnection("User ID=root;Password=;Host=localhost;Port=3306;Database=cris;Protocol=TCP;Compress=false;Pooling=true;Min Pool Size=0;Max Pool Size=100;Connection Lifetime=0;");
+            MySqlConnection conn = new MySqlConnection("User ID=root;Password=;Host=localhost;Port=3306;Database=cris;Protocol=TCP;Compress=false;Pooling=true;Min Pool Size=0;Max Pool Size=100;Connection Lifetime=0;");//CRis 
 
             conn.Open();
 
